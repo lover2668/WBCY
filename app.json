@@ -1,0 +1,17 @@
+{
+  "pages":[
+    "pages/date/date",
+    "pages/frequency/frequency",
+    "pages/index/index",
+    "pages/map/map",
+    "pages/mapDetail/mapDetail",
+    "pages/detail/detail",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

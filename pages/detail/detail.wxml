@@ -1,0 +1,39 @@
+<!--pages/detail/detail.wxml-->
+<view class="header-view">
+  <label class="header-label">班次详情</label>
+</view>
+<view class="main-view">
+  <view class="container">
+    <view class="item-view">
+      <label class="alabel">{{"班次"}}</label>
+      <label>{{pageData.frequencyName}}</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"开始时间"}}</label>
+      <label>{{pageData.startTime}}</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"结束时间"}}</label>
+      <label>{{pageData.endTime}}</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"需巡更次数"}}</label>
+      <label>{{pageData.times}}次</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"当前巡更序次"}}</label>
+      <label>第{{pageData.currentTime}}次</label>
+    </view>
+    <!-- <view class="item-view">
+      <label class="alabel">{{"当前巡更点"}}</label>
+       <label>点{{pageData.point.no}}：{{pageData.point.locationName}}</label> 
+    </view> -->
+    <view class="item-view">
+      <label class="alabel">{{"单次规定时长"}}</label>
+      <label>{{pageData.time}}分钟</label>
+    </view>
+  </view>
+</view>
+
+<button bindtap="submit">开始巡更</button>
+<!-- <button type='warn' class='warn' bindtap="navBack">返回首页</button> -->

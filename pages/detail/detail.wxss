@@ -1,0 +1,105 @@
+/* pages/detail/detail.wxss */
+
+.header-view {
+    height: 150rpx;
+    width:750rpx;
+    display: flex;
+    align-items: flex-end;
+    background-color: rgb(53, 178, 168);
+    /* position:fixed;
+    left:0rpx;
+    top:0rpx;
+    right:0rpx;
+    z-index:998; */
+}
+
+.header-label {
+    font-size:40rpx;
+    height:60rpx;
+    width: 700rpx;
+    color:white;
+}
+
+.alabel {
+  color: rgb(53, 178, 168);
+    margin-top: 20rpx;
+    width:250rpx;
+}
+
+.title-view {
+  margin-left:  30rpx;
+  margin-top: 10rpx;
+}
+
+.item-view {
+    width:750rpx;
+    height:80rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5rpx;
+    border-bottom-color: lavender;
+}
+
+image-view {
+  height: 200rpx;
+}
+
+input {
+    background-color: white;
+    width:650rpx;
+    height:40rpx;
+    margin-left: 25rpx;
+    margin-top:20rpx;
+}
+
+label {
+    color: lightslategray;
+    /* width: 700rpx; */
+    height:40rpx;
+    margin-left:40rpx;
+    margin-top: 20rpx;
+    font-size: 32rpx;
+}
+
+.alabel {
+  color: rgb(53, 178, 168);
+    margin-top: 20rpx;
+}
+
+
+/* button {
+    margin: 20rpx;
+    margin-top:40rpx;
+    background-color: green;
+    color: white;
+} */
+
+.placeholder-text {
+    font-size: 30rpx;
+    color: lightgray;
+}
+
+button {
+    margin: 20rpx;
+    margin-top:80rpx;
+    background-color: rgb(53, 178, 168);
+    color: white;
+    font-size: 32rpx;
+}
+
+.warn {
+  margin: 20rpx;
+  margin-top:20rpx;
+  /* color: white; */
+  font-size: 32rpx;
+}
+
+.footer-view {
+  height: 80rpx;
+}
+
+ .container {
+  margin-top: 10rpx;
+} 

@@ -1,0 +1,130 @@
+ /* pages/frequency/frequency.wxss 
+/**index.wxss**/
+.header-view {
+    height: 150rpx;
+    width:750rpx;
+    display: flex;
+    align-items: flex-end;
+    background-color: rgb(53, 178, 168);
+}
+
+.header-label {
+  margin-left: 30rpx;
+    font-size:40rpx;
+    height:60rpx;
+    width: 700rpx;
+    color:white;
+}
+
+.item-view {
+  font-size: 36rpx;
+    width:750rpx;
+    height:100rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5rpx;
+    border-bottom-color: lavender;
+    /* background-color: darkred */
+}
+
+.item-label {
+  margin:30rpx;
+}
+
+.icon {
+  margin-left:30rpx;
+  margin-top: 30rpx;
+  width:40rpx;
+  height: 40rpx;
+} 
+
+label {
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  height: 40rpx;
+  width: 140rpx;
+  /* color: mediumpurple; */
+  color: #353535;
+   text-align: left; 
+}
+
+.show-label {
+   margin-top: 60rpx; 
+  text-align: center;
+}
+
+.input {
+    background-color: white;
+    width:550rpx;
+    height:40rpx;
+    margin-left: 120rpx;
+    margin-top:10rpx;
+    color: darkgray;
+ 
+     /* border-bottom-style: solid;
+    border-bottom-width: 0.5rpx;
+    border-bottom-color: lavender;  */
+}
+
+.office {
+  float: right;
+  /* align-self: right; */
+  /* margin-left: 250rpx; */
+  font-size: 30rpx;
+  margin-top: 50rpx;
+}
+
+.changeOffice {
+  /* color: blue; */
+  /* font-size: 30rpx;
+  margin-top: 150rpx; */
+  text-decoration: underline;
+  color: dodgerblue;
+}
+
+
+button {
+  /* margin-bottom: 80rpx; */
+  margin-top: 200rpx;
+}
+
+.date-view {
+  /* margin-top: 350rpx; */
+  /* height: 100%;
+  width: 100%; */
+    background-color: white;  
+   position:fixed;
+    left:0rpx;
+    top:0rpx;
+    right:0rpx;
+    z-index:998; 
+    height: 1000rpx;
+}
+
+.picker-view{
+  height: 400rpx;
+  margin-top: 400rpx;
+  background-color: white;
+}
+
+.picker {
+    margin-top: 100rpx;  
+   /* margin-top: 400rpx; */
+   line-height: 100rpx;
+   /* text-align: ; */
+  height: 100rpx;
+  width: 750rpx;
+  /* background-color: white; */
+}
+
+.confirm-button {
+  margin-top: 80rpx;
+} 
+
+.cancel-button {
+  margin-top: 40rpx;
+  /* background-color: green;
+  color: white; */
+}

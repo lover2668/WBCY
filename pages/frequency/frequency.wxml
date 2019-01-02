@@ -1,0 +1,18 @@
+<!--pages/frequency/frequency.wxml-->
+<view hidden='{{mainViewHidden}}'>
+  <view class="header-view">
+    <label class="header-label">请选择班次</label>
+  </view>
+  <view wx:for="{{frequencies}}">
+    <view id="{{index}}" class="item-view" bindtap="viewTap" data-frequency-name="{{item.frequencyName}}">
+      <image class="icon" src="../../images/apply.png"></image>
+      <label class="item-label">{{item.frequencyName}}</label>
+    </view>
+  </view>
+  <view class="office">
+    <text>当前管理处： {{currentOffice}}。</text>
+    <text class="changeOffice" bindtap="textTap">切换管理处？</text>
+  </view>
+   <button type='warn' bindtap='reset'>重置巡更信息</button> 
+</view>
+
