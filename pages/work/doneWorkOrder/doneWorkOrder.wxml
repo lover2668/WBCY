@@ -1,0 +1,41 @@
+<view class="main-view">
+  <view class='yi-button' bindtap='toDoneWorkOrder'>
+    <text class='yi-button-text'>{{"< 未处理 "}}</text>
+    <!-- <image class='doneImage' src='../../../images/xiayiye.png' /> -->
+  </view>
+  <scroll-view scroll-y="{{true}}" bindscrolltoupper="scrolltoupper">
+    <block wx:for="{{repairList}}">
+      <view id="{{index}}" class="list-item" bindtap="viewTaped">
+        <view class='list-item-left'>
+          <!-- 工单编号 -->
+          <view class='list-item-number'>{{item.number}}</view>
+          <!-- 客服填报人： -->
+          <view class='list-item-child'>
+            <view class='list-item-child-title'>客服填报人：</view>
+            <view class='list-item-child-info'>{{item.server}}</view>
+          </view>
+          <!-- 客服填报日期： -->
+          <view class='list-item-child'>
+            <view class='list-item-child-title'>客服填报日期：</view>
+            <view class='list-item-child-info'>{{item.reportDate}}</view>
+          </view>
+          <!-- 工作地址： -->
+          <view class='list-item-child'>
+            <view class='list-item-child-title'>工作地址：</view>
+            <view class='list-item-child-info'>{{item.workAddress}}</view>
+          </view>
+          <!-- 工作内容： -->
+          <view class='list-item-child'>
+            <view class='list-item-child-title'>工作内容：</view>
+            <view class='list-item-child-info'>{{item.workContent}}</view>
+          </view>
+          <view class='list-item-child'>
+            <view class='list-item-child-title'>状态：</view>
+            <view class='list-item-child-info'>{{item.status}}</view>
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </scroll-view>
+</view>

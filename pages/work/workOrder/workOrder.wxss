@@ -1,0 +1,212 @@
+/* pages/wrokOrder/wrokOrder.wxss */
+
+/* pages/login/login.wxss */
+
+page {
+  background-color: whitesmoke;
+}
+
+.yi-button {
+  height: 60rpx;
+  /* margin-top: 20rpx; */
+  color: white;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  padding: 10rpx;
+  /* padding-left: 10rpx; */
+  padding-right: 30rpx;
+  text-align: right;
+  background-color: #353535;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.yi-button-text {
+  height: 40rpx;
+  width: 120rpx;
+  border-bottom: 0.5rpx solid white;
+  /* border-radius: 20rpx; */
+  /* padding-left: 20rpx; */
+  /* padding-right: 10rpx; */
+}
+
+.header-func {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  /* margin-top: 20rpx; */
+  font-size: 28rpx;
+}
+
+.line {
+  height: 30rpx;
+  width: 3rpx;
+  background-color: gray;
+}
+
+.sort-view {
+  height: 60rpx;
+  width: 500rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  /* border-right: 0.5rpx solid whitesmoke; */
+  /* margin-top: 20rpx; */
+  /* font-size: 30rpx; */
+}
+
+.sort-view text {
+  background-color: white;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  font-size: 28rxp;
+}
+
+.choose {
+  color: #09bb07;
+}
+
+.nonChoose {
+  color: #303030;
+}
+
+
+.filtrate-view {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 80rpx;
+  background-color: white;
+  /* margin-top: 20rpx; */
+}
+
+.filtrate-text {
+  /* width: 530rpx; */
+  font-size: 28rpx;
+  line-height: 60rpx;
+  /* text-align: center; */
+}
+
+.main-view {
+  width: 750rpx;
+}
+
+/* ========================列表子项============================= */
+
+.list-item {
+  width: 680rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* align-items: center; */
+  background-color: white;
+  border-bottom: 0.5rpx solid whitesmoke;
+}
+
+.list-item-child {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+}
+
+.list-item-child-title {
+  width: 220rpx;
+  font-size: 28rpx;
+  color: black;
+}
+
+.list-item-left {
+  width: 630rpx;
+  padding-top: 10rpx;
+}
+
+.list-item-right {
+  width: 50rpx;
+}
+
+.list-item-number {
+  color: #606060;
+  font-size: 30rpx;
+  /* padding: 10rpx; */
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+  /* margin-bottom: 15rpx; */
+  border-bottom: 1rpx solid whitesmoke;
+}
+
+.list-item-child-info {
+  /* color: darkgray; */
+  font-size: 28rpx;
+  padding: 5rpx;
+}
+
+.list-item-child-content {
+  color: #343434;
+  font-size: 28rpx;
+  padding: 5rpx;
+}
+
+/* ============================================================ */
+
+.level {
+  color: orange;
+}
+
+image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.doneImage {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 60rpx;
+}
+
+scroll-view {
+  /* height: 100%;
+  margin-top: 20rpx; */
+  position: absolute;
+    top: 80rpx;
+    bottom: 0rpx;
+}
+
+
+
+.dropDown-image {
+  height: 30rpx;
+  width: 30rpx;
+  margin: 20rpx;
+}
+
+.title-text {
+  width: 120rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  /* text-align: center; */
+  margin-left: 20rpx;
+}
+
+.status-red {
+  color: red;
+}
+
+.status-orange {
+  color: orange;
+}
+
+.status-green {
+  color: green;
+}
+
+.status-blue {
+  color: blue;
+}

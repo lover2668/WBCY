@@ -1,0 +1,30 @@
+<!--pages/frequency/frequency.wxml-->
+<!-- <view hidden='{{mainViewHidden}}'>
+  <view class="header-view">
+    <label class="header-label">请选择巡更类型</label>
+  </view>
+  <view wx:for="{{patrolTypes}}">
+    <view id="{{index}}" class="item-view" bindtap="viewTap">
+      <image class="icon" src="../../images/apply.png"></image>
+      <label class="item-label">{{item}}</label>
+    </view>
+  </view> -->
+  <!-- <view class="office">
+    <text>当前管理处： {{currentOffice}}。</text>
+    <text class="changeOffice" bindtap="textTap">切换管理处？</text>
+  </view>
+   <button type='warn' bindtap='reset'>重置巡更信息</button>  -->
+<!-- </view> -->
+
+
+
+<view class='main-view'>
+  <view class="func-view" wx:for="{{patrolTypes}}">
+    <view id="{{index}}" class="icon-view" bindtap="viewTap">
+      <image class="icon-image" src="../../../images/office.png"></image>
+      <label>{{item}}</label>
+      <image class='xiayiye' src="../../../images/xiayiye.png" id="1" ></image>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,81 @@
+<!-- <view hidden='{{pageHidden}}'> -->
+<!-- pages/welcome/welcome.wxml -->
+<!-- <view class="header-view"  style="background-image:url(../../images/background.png);"> -->
+<!-- <image class='main-image' src='../../images/background.png' /> -->
+<!-- <view class="header-view" >
+  <view class='icong-view'>
+    <image src="../../images/yanqiao.png" bindtap="changeManagement"></image>
+    <label class='zt-lable'>{{currentZT.ZTName + (userInfo.ZTInfo.length > 1 ? "..." : "")}}</label>
+  </view>
+  <view class='user-view'>欢迎您：孔令才 </view>
+</view> -->
+<!-- <view class="header-view">
+  <view class='flex-row flex-between'>
+    <view style='padding-left: 20rpx;' >
+    <view class='header-company'>创雅物业管理平台</view>
+    <view class='header-name'> {{userInfo.UserCode}}</view>
+    </view>
+    <view class='head-logo-view'>
+     <open-data type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <view class='flex-row flex-end' bindtap='changeManagement'>
+    <view class='header-zt'>{{currentZT.ZTName}} </view>
+    <view class='header-ztcontrol '>切换帐套...</view>
+  </view>
+  
+</view> -->
+
+<!-- <view class="func-view" hidden='{{pageHidden}}'>
+  <block wx:for="{{icons}}">
+    <view class="icon-view"  bindtap="imageTouched">
+      <image id="{{index + 1}}" src="{{item.imgSrc}}" data-func='{{item.showValue}}'></image>
+      <label>{{item.showValue}}</label>
+    </view>
+  </block>
+
+</view> -->
+<image src="../../images/index_image.png"></image>
+<view class="func-view">
+<block wx:for="{{icons}}">
+    <view id="{{index + 1}}" class="icon-view" bindtap="imageTouched"  data-func='{{item.showValue}}'>
+      <image class="icon-image" src="{{item.imgSrc}}"></image>
+      <label>{{item.showValue}}</label>
+      <image class='xiayiye' src="../../images/xiayiye.png" id="1" ></image>
+    </view>
+    </block>
+  </view>
+
+
+
+
+
+<!-- <view class="func-view" hidden='{{pageHidden}}'>
+  <block wx:for="{{icons}}">
+    <view class="icon-view">
+      <image id="{{index + 1}}" src="{{item.imgSrc}}" data-func='{{item.showValue}}' bindtap="imageTouched"></image>
+      <label>{{item.showValue}}</label>
+    </view>
+  </block>
+
+</view> -->
+
+
+
+<!-- <rich-text nodes='{{nodes}}'>
+  
+</rich-text> -->
+
+
+<!-- <view wx:if="{{coverViewShow}}" class='cover-view'> -->
+<!-- <view wx:if="{{false}}" class='cover-view'>
+  <view class='cover-main-view'>
+    <view class="cover-header-view">
+      为了保证信息安全，请输入物业通密码后使用
+    </view>
+    <view class="item-view">
+      <input id="2" name="password" type='password' placeholder="请输入您的物业通密码" placeholder-class="placeholder-text" bindinput='input' />
+    </view>
+    <view class='cover-view-button' type="primary" bindtap='checkPassword'>确定</view>
+  </view>
+</view> -->

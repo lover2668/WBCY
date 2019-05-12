@@ -1,0 +1,35 @@
+<!--pages/frequency/frequency.wxml-->
+
+<!-- <view wx:for="{{frequencies}}">
+    <view id="{{index}}" class="item-view" bindtap="viewTap" data-frequency-name="{{item.frequencyName}}">
+      <image class="icon" src="../../images/apply.png"></image>
+      <label class="item-label">{{item.frequencyName}}</label>
+    </view> -->
+
+<!-- <navigator open-type="navigateTo" url='../index/index'> 跳转到新页面</navigator> -->
+<view class='main-view'>
+  <view class="func-view" wx:for="{{frequencies}}">
+    <view id="{{index}}" class="icon-view" bindtap="viewTap" data-frequency-name="{{item.frequencyName}}">
+      <image class="icon-image" src="../../../images/apply.png"></image>
+      <label>{{item.frequencyName}}</label>
+      <image class='xiayiye' src="../../../images/xiayiye.png" id="1"></image>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+<view class='choose-div'>
+  <view class="office">
+    <view class='show'>当前管理处：{{currentOffice}}</view>
+    <view class="changeOffice" bindtap="changeObject">切换管理处？</view>
+  </view>
+  <view class="office">
+    <view class='show'>当前巡更人：{{currentUser}}</view>
+    <view class="changeOffice" bindtap="changeUser">切换巡更人？</view>
+  </view>
+</view>
+<button type='warn' bindtap='reset'>重置巡更信息</button>
+<!-- </view> -->

@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<!-- <view class="header-view">
+  <label class="header-label">请选择管理处</label>
+</view> -->
+<!-- <view wx:for="{{office}}">
+  <view id="{{item.officeId}}" class="item-view" bindtap="viewTap" data-office-name="{{item.officeName}}">
+  <image class="icon" src="../../images/office.png"></image>
+  <view class="content-view">{{item.officeName}}</view>
+  </view>
+
+</view> -->
+
+
+
+
+
+
+<view class='main-view'>
+  <view class="func-view" wx:for="{{office}}">
+    <view id="{{item.officeId}}" class="icon-view" bindtap="viewTap" data-office-name="{{item.officeName}}">
+      <image class="icon-image" src="../../../images/office.png"></image>
+      <label>{{item.officeName}}</label>
+      <image class='xiayiye' src="../../../images/xiayiye.png" id="1" ></image>
+    </view>
+  </view>
+</view>
+
+
+
+
+

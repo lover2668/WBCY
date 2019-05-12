@@ -1,0 +1,26 @@
+/* pages/login/login.wxss */
+
+
+
+
+
+
+/* @import "../../../commonCss/common.wxss"; */
+
+
+
+
+
+
+
+
+/*--------------------------基础通用-------------------------------*/
+page {
+  background-color: whitesmoke;
+}
+
+.main-view {
+  width: 750rpx;
+}
+
+

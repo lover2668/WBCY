@@ -1,0 +1,117 @@
+/* pages/detail/detail.wxss */
+
+/* page {
+  background-color: whitesmoke;
+} */
+
+.main-view {
+  /* margin-top: 20rpx; */
+  /* background-color: white; */
+  padding-top: 20rpx;
+  padding-bottom: 180rpx;
+}
+
+
+.header-view {
+    height: 150rpx;
+    width:750rpx;
+    display: flex;
+    align-items: flex-end;
+    background-color: rgb(53, 178, 168);
+    /* position:fixed;
+    left:0rpx;
+    top:0rpx;
+    right:0rpx;
+    z-index:998; */
+}
+
+.header-label {
+    font-size:40rpx;
+    height:60rpx;
+    width: 700rpx;
+    color:white;
+}
+
+.alabel {
+  color: #1296db;
+    /* margin-top: 20rpx; */
+    width:250rpx;
+}
+
+.title-view {
+  margin-left:  30rpx;
+  margin-top: 10rpx;
+}
+
+.item-view {
+    /* width:750rpx; */
+    padding-left: 30rpx;
+    font-size: 32rpx;
+    height:100rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* justify-content: center; */
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5rpx;
+    border-bottom-color: lavender;
+}
+
+image-view {
+  height: 200rpx;
+}
+
+input {
+    background-color: white;
+    width:650rpx;
+    height:40rpx;
+    margin-left: 25rpx;
+    margin-top:20rpx;
+}
+
+label {
+    color: lightslategray;
+    /* width: 700rpx; */
+    height:40rpx;
+    margin-left:40rpx;
+    margin-top: 20rpx;
+    font-size: 32rpx;
+}
+
+
+
+/* button {
+    margin: 20rpx;
+    margin-top:40rpx;
+    background-color: green;
+    color: white;
+} */
+
+.placeholder-text {
+    font-size: 30rpx;
+    color: lightgray;
+}
+
+button {
+    margin: 20rpx;
+    margin-top:80rpx;
+    background-color: #1296db;
+    color: white;
+    font-size: 32rpx;
+}
+
+.warn {
+  margin: 20rpx;
+  margin-top:20rpx;
+  /* color: white; */
+  font-size: 32rpx;
+}
+
+.footer-view {
+  height: 80rpx;
+}
+
+ .container {
+  margin-top: 10rpx;
+} 

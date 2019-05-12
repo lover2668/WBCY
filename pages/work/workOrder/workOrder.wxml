@@ -1,0 +1,57 @@
+
+<view class="main-view">
+  <view class='yi-button' bindtap='toDoneWorkOrder'>
+    <text class='yi-button-text'>{{"已处理 >"}}</text>
+  </view>
+  <!-- <view class='header-func'>
+    <view class='sort-view'>
+      <block wx:for="{{sortTypeList}}">
+        <text id='{{index}}' class='{{sortTypeListIndex == index ? "choose" : "nonChoose"}}' bindtap='sortTextTaped'>{{item}}</text>
+      </block>
+    </view>
+    <view class='line'></view>
+    <picker range='{{filtrateList}}' bindchange='filtrateStatus' value='{{filtrateIndex}}'>
+      <view class='filtrate-view'>
+        <view class='filtrate-text'>{{filtrateList[filtrateIndex]}}</view>
+        <image class='dropDown-image' src='../../../images/xiala.png' />
+      </view>
+    </picker>
+  </view> -->
+  <scroll-view scroll-y="{{true}}" bindscrolltoupper="scrolltoupper">
+    <block wx:for="{{repairList}}">
+      <view id="{{index}}" class="list-item" bindtap="viewTaped">
+        <view class='list-item-left'>
+          <!-- 工单编号 -->
+          <view class='list-item-number'>{{item.number}}</view>
+          <!-- 管理处： -->
+          <!-- <view class='list-item-child'>
+            <view class='list-item-child-title'>管理处：</view>
+            <view class='list-item-child-info'>{{item.project}}</view>
+          </view> -->
+          <!-- 客服填报人： -->
+          <view class='list-item-child'>
+            <view class='list-item-child-title'>客服填报人：</view>
+            <view class='list-item-child-info'>{{item.server}}</view>
+          </view>
+          <!-- 客服填报日期： -->
+          <view class='list-item-child'>
+            <view class='list-item-child-title'>客服填报日期：</view>
+            <view class='list-item-child-info'>{{item.reportDate}}</view>
+          </view>
+          <!-- 工作地址： -->
+          <view class='list-item-child'>
+            <view class='list-item-child-title'>工作地址：</view>
+            <view class='list-item-child-info'>{{item.workAddress}}</view>
+          </view>
+          <!-- 工作内容： -->
+          <view class='list-item-child'>
+            <view class='list-item-child-title'>工作内容：</view>
+            <view class='list-item-child-info'>{{item.workContent}}</view>
+          </view>
+          
+        </view>
+        
+      </view>
+    </block>
+  </scroll-view>
+</view>

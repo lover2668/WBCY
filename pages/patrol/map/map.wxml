@@ -1,0 +1,57 @@
+<!-- <view class="header-view">
+  <label class="header-label">巡更点列表</label>
+</view> -->
+<view>
+  <block wx:for="{{route}}">
+    <view id='{{index}}' class='item-view' bindtap='viewTaped'>
+      <image src='{{item.isScan ? "../../../images/zuobiaogreen.png" : "../../../images/zuobiao.png"}}'/>
+      <label class='text-view {{item.isScan ? "black" : "gray"}}'>
+        巡更点{{item.no}}：{{item.locationName}}
+      </label>
+    </view>
+  </block>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--pages/map/map.wxml-->
+<!-- <map longitude="{{lo}}" latitude="{{la}}" scale="16" markers="{{markerArr}}" polyline="{{polylineArr}}" show-location="{{true}}" bindmarkertap="markerTap"></map> -->
+
+<!-- <cover-view class="count-down">
+ <view>剩余时长：{{timeShow}}</view> 
+ </cover-view> -->
+
+<!-- <cover-view class="time">
+ <view>当前时间：{{nowTimeShow}}</view> 
+ </cover-view> -->

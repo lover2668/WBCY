@@ -1,0 +1,207 @@
+<!--pages/mapDetail/mapDetail.wxml-->
+
+<!-- <text>second: {{timeShow}} </text>
+
+<text>second: {{second}} </text> -->
+
+<!-- /**
+ * 当前经度
+ * 当前纬度
+ * 二维码经度
+ * 二维码纬度
+ * 班次
+ * 路线
+ * 工作日期
+ * 当前序次
+ * 当前已用时长
+ * 图片1
+ * 图片2
+ */ -->
+
+<!-- <view class="header-view">
+  <label class="header-label">巡更点详情</label>
+</view> -->
+<!-- <view class="main-view"> -->
+  <!-- <view class="title-view">
+    班次信息
+  </view>
+  <view class="container">
+    <view class="item-view">
+      <label class="alabel">{{"班次"}}</label>
+      <label>{{pageData.frequency}}</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"工作日期"}}</label>
+      <label>{{pageData.date}}</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"当前序次"}}</label>
+      <label>{{pageData.time}}</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"当前已用时长"}}</label>
+      <label>{{pageData.usedTime}}分钟</label>
+    </view>
+  </view>
+  <view class="title-view">
+    位置信息
+  </view>
+  <view class="container">
+    <view class="item-view">
+      <label class="alabel">{{"当前巡更点名称"}}</label>
+      <label>{{pageData.pointName}}</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"当前巡更点经度"}}</label>
+      <label>{{pageData.pointLa}}</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"当前巡更点纬度"}}</label>
+      <label>{{pageData.pointLo}}</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"扫码时所处经度"}}</label>
+      <label>{{pageData.scanLa}}</label>
+    </view>
+    <view class="item-view">
+      <label class="alabel">{{"扫码时所处纬度"}}</label>
+      <label>{{pageData.scanLo}}</label>
+    </view>
+  </view> -->
+
+  <!-- <view class="title-view">
+    处理详情
+  </view>
+  <view class="container">
+  <view class="input-view" id="input">
+      <label class="alabel">{{"巡更说明"}}</label>
+      <textarea placeholder="输入巡更说明" bindinput="input" />
+    </view> -->
+    <!-- <view class="item-view" id="image1" bindtap="uploadImage">
+      <label class="alabel">{{"上传图片1"}}</label>
+      <label>点击添加图片</label>
+    </view>
+    <view class="image-view" hidden="{{image1.hidden}}">
+      <image mode='aspectFit' src="{{image1.src}}"></image>
+    </view>
+    <view class="item-view" id="image2" bindtap="uploadImage">
+      <label class="alabel">{{"上传图片2"}}</label>
+      <label>点击添加图片</label>
+    </view>
+    <view class="image-view" hidden="{{image2.hidden}}">
+      <image mode='aspectFit' src="{{image2.src}}"></image>
+    </view> -->
+  <!-- </view>
+</view>
+<button bindtap="scan">扫码</button>
+<button bindtap="submit">提交</button>
+<view class="footer-view"></view> -->
+
+
+
+
+
+
+<view class="main-view">
+  <view class="func-block">
+    <view class="block-header">
+      <view class="tip-view">
+        班次信息
+      </view>
+    </view>
+    <view class="sd-item">
+      <view class='sd-title'>班次：</view>
+      <view class='sd-content'>{{pageData.frequency}}</view>
+    </view>
+    <view class="sd-item">
+      <view class='sd-title'>工作日期：</view>
+      <view class='sd-content'>{{pageData.date}}</view>
+    </view>
+    <view class="sd-item">
+      <view class='sd-title'>当前序次：</view>
+      <view class='sd-content'>{{pageData.time}}</view>
+    </view>
+    <view class="sd-item">
+      <view class='sd-title'>已用时长：</view>
+      <view class='sd-content'>{{pageData.usedTime}}分钟</view>
+    </view>
+  </view>
+
+  <view class="func-block">
+    <view class="block-header">
+      <view class="tip-view">
+        位置信息
+      </view>
+    </view>
+    <view class="sd-item">
+      <view class='sd-title'>当前巡更点名称：</view>
+      <view class='sd-content'>{{pageData.pointName}}</view>
+    </view>
+    <view class="sd-item">
+      <view class='sd-title'>当前巡更点经度：</view>
+      <view class='sd-content'>{{pageData.pointLa}}</view>
+    </view>
+    <view class="sd-item">
+      <view class='sd-title'>当前巡更点纬度：</view>
+      <view class='sd-content'>{{pageData.pointLo}}</view>
+    </view>
+    <view class="sd-item">
+      <view class='sd-title'>扫码时所处经度：</view>
+      <view class='sd-content'>{{pageData.scanLa}}</view>
+    </view>
+    <view class="sd-item">
+      <view class='sd-title'>扫码时所处纬度：</view>
+      <view class='sd-content'>{{pageData.scanLo}}</view>
+    </view>
+  </view>
+ <button bindtap="scan">扫码</button>
+  
+  <view class="func-block">
+    <view class="block-header">
+      <view class="tip-view">
+        处理详情
+      </view>
+    </view>
+    <!-- <textarea placeholder="输入巡更说明" bindinput="input" /> -->
+    <view class="cd-item" hidden='{{chargeHidden}}' bindtap='checkIdentity'>
+      <view class='cd-title'>巡更说明：</view>
+      <textarea auto-height='{{true}}' class='cd-input' bindinput='input'  placeholder-class="cd-placeholder" id="2"placeholder="输入巡更说明" />
+    </view>
+    
+  </view>
+  <view class="func-block">
+    <view class="block-header">
+      <view class="tip-view">
+       上传图片
+      </view>
+    </view>
+
+<!-- <view class="item-view" id="image1" bindtap="uploadImage">
+      <label class="alabel">{{"上传图片1"}}</label>
+      <label>点击添加图片</label>
+    </view>
+    <view class="image-view" hidden="{{image1.hidden}}">
+      <image mode='aspectFit' src="{{image1.src}}"></image>
+    </view>
+    <view class="item-view" id="image2" bindtap="uploadImage">
+      <label class="alabel">{{"上传图片2"}}</label>
+      <label>点击添加图片</label>
+    </view>
+    <view class="image-view" hidden="{{image2.hidden}}">
+      <image mode='aspectFit' src="{{image2.src}}"></image>
+    </view> -->
+
+
+
+    <view class="images-view">
+      <!-- <block wx:for="{{beforeImage}}"> -->
+        <image class='sd-image' id='image1' src='{{image1.src}}' bindtap='uploadImage' />
+        <image class='sd-image' id='image2' src='{{image2.src}}' bindtap='uploadImage' />
+      <!-- </block> -->
+    </view>
+  </view>
+  <!-- <button id="submit" formType="submit" type='primary'>确认提交</button> -->
+ 
+<button bindtap="submit">提交</button>
+</view>
+<view class="page-footer"></view>

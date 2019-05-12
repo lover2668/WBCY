@@ -1,17 +1,30 @@
 {
-  "pages":[
-    "pages/date/date",
-    "pages/frequency/frequency",
-    "pages/index/index",
-    "pages/map/map",
-    "pages/mapDetail/mapDetail",
-    "pages/detail/detail",
-    "pages/logs/logs"
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/patrol/bindUser/bindUser",
+    "pages/patrol/date/date",
+    "pages/patrol/patrolType/patrolType",
+    "pages/patrol/frequency/frequency",
+    "pages/patrol/patrolIndex/patrolIndex",
+    "pages/patrol/map/map",
+    "pages/patrol/mapDetail/mapDetail",
+    "pages/patrol/detail/detail",
+    "pages/work/workOrder/workOrder",
+    "pages/work/doneWorkOrder/doneWorkOrder",
+    "pages/work/workDetail/workDetail",
+    "pages/logs/logs",
+    "pages/login/login"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#353535",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位您的扫码位置"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
 }

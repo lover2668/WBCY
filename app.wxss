@@ -8,3 +8,257 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }  */
+
+
+
+
+/* ==================================页面基本设置============================== */
+page {
+  background-color: whitesmoke;
+}
+
+.main-view {
+  width: 750rpx;
+}
+
+.call {
+  color: blue;
+  text-decoration: underline;
+}
+
+
+
+
+
+/* ========================详情页 WXSS============================= */
+
+/* 用于分隔不同功能区 */
+.func-block {
+  background-color: white;
+  margin-top: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  /* border-bottom: 0.5rpx solid lightgray;
+    border-top: 0.5rpx solid lightgray;  */
+}
+
+/* 功能区标题 */
+.block-header {
+  color: orange;
+  font-size: 30rpx;
+  padding: 30rpx 0rpx 10rpx 0rpx;
+}
+
+button {
+  margin: 20rpx;
+  margin-top: 60rpx;
+  color: white;
+  font-size: 32rpx;
+}
+
+.page-footer {
+  height: 80rpx;
+}
+
+
+/*--------------------------sd-item---用于显示不需要处理的信息-------------------------------*/
+
+.sd-item {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: white;
+  font-size: 28rpx;
+}
+
+.sd-title {
+  width: 220rpx;
+  color: black;
+}
+
+.sd-content {
+  background-color: white;
+  margin-left: 10rpx;
+  color: #606060;
+  width: 550rpx;
+}
+
+.sd-call {
+  color: blue;
+  text-decoration: underline;
+}
+
+/*--------------------------sd-item---用于显示需要处理的信息-------------------------------*/
+
+.cd-item {
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: white;
+  font-size: 30rpx;
+  border-bottom: 0.5rpx solid whitesmoke;
+}
+
+.cd-title {
+  width: 280rpx;
+  color: black;
+}
+
+.cd-content {
+  background-color: white;
+  width: 450rpx;
+  margin-left: 10rpx;
+  color: #606060;
+}
+
+.cd-input {
+  background-color: white;
+  margin-left: 10rpx;
+  color: #606060;
+  width: 480rpx;
+}
+
+.cd-radio {
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #606060;
+}
+
+.cd-placeholder {
+  font-size: 30rpx;
+  color: lightgray;
+}
+
+/* 下拉或下一页 */
+.cd-next-image {
+  margin-left: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+/*--------------------------图片相关----------------------------------*/
+
+/* 用于显示图片列表 */
+.images-view {
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sd-image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.cd-image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+
+
+
+  /* ========================列表子项 WXSS============================= */
+
+.list-item {
+  width: 680rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* align-items: center; */
+  background-color: white;
+  border-bottom: 0.5rpx solid whitesmoke;
+}
+
+.list-item-child {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.list-item-child-title {
+  width: 180rpx;
+  font-size: 28rpx;
+  color: black;
+}
+
+.list-item-left {
+  width: 630rpx;
+  padding-top: 10rpx;
+}
+
+.list-item-right {
+  width: 50rpx;
+}
+
+.list-item-number {
+  color: #606060;
+  font-size: 30rpx;
+  height: 35rpx;
+  /* padding: 10rpx; */
+  padding-bottom: 5rpx;
+  /* margin-bottom: 15rpx; */
+  border-bottom: 1rpx solid whitesmoke;
+}
+
+.list-item-child-info {
+  color: #606060;
+  font-size: 28rpx;
+  padding: 5rpx;
+  width: 400rpx;
+}
+
+.list-item-child-content {
+  color: #343434;
+  font-size: 28rpx;
+  padding: 5rpx;
+}
+
+/* .new-image {
+  
+} */
+
+/* ============================================================ */
+
+
+/* ==================================颜色============================== */
+
+.status-red {
+  color: red;
+}
+
+.status-orange {
+  color: orange;
+}
+
+.status-green {
+  color: green;
+}
+
+.status-blue {
+  color: blue;
+}
+
+/* 默认按钮颜色 */
+.color-green {
+  color: #09bb07;
+}
+
+.color-darkgray {
+  color: #606060;
+}
