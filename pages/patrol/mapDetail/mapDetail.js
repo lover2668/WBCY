@@ -291,7 +291,7 @@ Page({
                 wx.uploadFile({
                   formData: { id: id, func: "1" },
                   // formData: that.data.submitData,
-                  url: "http://k17154485y.imwork.net:23530/WanBoServer/Patrol/SetWatchImages",
+                  url: config.urls.setWatchImageUrl,
                   // url: "http://k17154485y.imwork.net/wanboapp/action/SetWatchImages.aspx",
                   filePath: that.data.image1.src,
                   name: getTimeStamp() + "." + extraName,
@@ -307,7 +307,7 @@ Page({
                 var extraName = extra[extra.length - 1];
                 wx.uploadFile({
                   formData: { id: id, func: "2" },
-                  url: "http://k17154485y.imwork.net:23530/WanBoServer/Patrol/SetWatchImages",
+                  url: config.urls.setWatchImageUrl,
                   // url: "http://k17154485y.imwork.net/wanboapp/action/SetWatchImages.aspx",
                   filePath: that.data.image2.src,
                   name: getTimeStamp() + "." + extraName,

@@ -1,13 +1,8 @@
-//   getPatrolType: "http://k17154485y.imwork.net:23530/WanBoServer/Patrol/OnGetPatrolType",
-//   getOfficeInfo: "http://k17154485y.imwork.net:23530/WanBoServer/Patrol/GetOfficeInfo",
-//   getWatchInfo: "http://k17154485y.imwork.net:23530/WanBoServer/Patrol/GetWatchInfo",
-//   setWatchInfo: "http://k17154485y.imwork.net:23530/WanBoServer/Patrol/SetWatchResult"
 
 
 // const baseUrl = "http://localhost:11780";//云服务器Url
-const baseUrl = "http://k17154485y.imwork.net:23530/WanBoServer";
-// const getImageUrl = "https://yanqiao2018.cn/bjyqfiles";//从服务器获取图片
-// const setImageUrl = "http://k17154485y.imwork.net:23530/bjyqwx/Files";//从服务器获取文件
+// const baseUrl = "http://k17154485y.imwork.net:23530/WanBoServer";
+const baseUrl = "https://itidcy.cn/WanBoServer";
 
 const workOrderUrl = baseUrl + "/WorkOrder";//工单相关功能Url
 const userUrl = baseUrl + "/WxOpen";//用户相关功能Url
@@ -20,6 +15,7 @@ const urls = {
   getOfficeInfoUrl: patrolUrl + "/GetOfficeInfo",
   getWatchInfoUrl: patrolUrl + "/GetWatchInfo",
   setWatchInfoUrl: patrolUrl + "/SetWatchResult",
+  setWatchImageUrl: patrolUrl + "/SetWatchImages",
 
   getWorkOrderUrl: workOrderUrl + "/OnGetRepairList",//获取工单列表
   getDoneWorkOrderUrl: workOrderUrl + "/OnGetDoneRepairList",//获取工单列表

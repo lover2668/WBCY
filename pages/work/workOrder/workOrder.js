@@ -70,8 +70,9 @@ Page({
     console.log("repairOrder");
     console.log(repairOrder);
     if (repairOrder) {
+      // console.log('../workDetail/workDetail?status=undone&repairOrder=' + JSON.stringify(repairOrder) + (workOrderInfo.roleId == 24 ? '&workers=' + JSON.stringify(workers) : '' + '&type=undone'))
       wx.navigateTo({
-        url: '../workDetail/workDetail?status=undone&repairOrder=' + JSON.stringify(repairOrder) + (workOrderInfo.roleId == 24 ? '&workers=' + JSON.stringify(workers) : '' + '&type=undone'),
+        url: '../workDetail/workDetail?repairOrder=' + JSON.stringify(repairOrder) + '&type=undone' + (workOrderInfo.roleId == 24 ? '&workers=' + JSON.stringify(workers) : ''),
       })
     }
     else {

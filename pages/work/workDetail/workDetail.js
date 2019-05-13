@@ -29,7 +29,7 @@ Page({
     var workOrderInfo = wx.getStorageSync("workOrderInfo");
     var repairOrder = JSON.parse(options.repairOrder);
     that.setData({
-      status: options.status,
+      // status: options.status,
       repairOrder: repairOrder,
       toDay: util.getDateTime(),
       roleId: workOrderInfo.roleId,

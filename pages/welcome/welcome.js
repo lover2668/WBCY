@@ -2,7 +2,6 @@ const config = require("../../utils/config.js");
 const util = require("../../utils/util.js");
 
 //待处理问题：短信，密码
-
 Page({
   data: {
     pageHidden: false,
@@ -247,7 +246,7 @@ function login(that) {
   })
   wx.login({
     success: res => {
-      wx.hideLoading();
+      // wx.hideLoading();
       // 发送 res.code 到后台换取 openId, sessionKey, unionId
       console.log(res);
       wx.request({
@@ -256,6 +255,7 @@ function login(that) {
         header: { 'content-type': 'application/x-www-form-urlencoded;charset=uft-8' },
         data: { code: res.code },
         success: function (res) {
+          wx.hideLoading();
           console.log(res);
           var result = res.data;
           if (result.success) {

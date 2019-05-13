@@ -101,6 +101,7 @@ function getRepairList(that) {
   var data = {
     userId: workOrderInfo.userId,
     structureId: workOrderInfo.structureId,
+    roleId: workOrderInfo.roleId
   }
   util.getRequest(config.urls.getDoneWorkOrderUrl, data, function (data, errCode) {
     if (errCode) {
