@@ -7,16 +7,11 @@ Page({
    */
   data: {
     repairOrder: {},
-    workers: [],
-    workersIndex: 0,
     date: getDate(),
     time: getTime(),
     today: getDateTime(),
     beforeImage: [],
     afterImage: [],
-    status: "",
-    roleId: null,
-    type: '',
   },
 
 
@@ -26,45 +21,16 @@ Page({
   onLoad: function (options) {
     var that = this;
     console.log(options);
-    var workOrderInfo = wx.getStorageSync("workOrderInfo");
     var repairOrder = JSON.parse(options.repairOrder);
     that.setData({
-      // status: options.status,
       repairOrder: repairOrder,
-      toDay: util.getDateTime(),
-      roleId: workOrderInfo.roleId,
-      type: options.type
     })
-    if (options.type == "done"){
-      wx.setNavigationBarTitle({
-        title: '已处理任务单详情',
-      })
-    }
-    else {
-      wx.setNavigationBarTitle({
-        title: '待处理任务单详情',
-      })
-    }
-    if (workOrderInfo.roleId == 24  && options.type === "undone") {
-      var workers = JSON.parse(options.workers); 
-      that.setData({
-        workers: workers,
-      })
-    }
     var beforeImages = [];
     var afterImages = [];
-    // if (repairOrder.reportImages){
-      
-    // }
     for (var i = 0; i < 3; i++) {
       beforeImages.push(repairOrder.reportImages[i] ? config.urls.getFileUrl + repairOrder.reportImages[i] : "");
-      if (repairOrder.afterImages) {
-        afterImages.push(repairOrder.afterImages[i] ? config.urls.getFileUrl + repairOrder.afterImages[i] : (that.data.type == "undone" ? "../../../images/addimage.png" : ""));
-      }
-      else {
-        afterImages.push(that.data.type == "undone" ? "../../../images/addimage.png" : "");
-      }
-      
+        afterImages.push(repairOrder.afterImages[i] ? config.urls.getFileUrl + repairOrder.afterImages[i] : "");
+
     }
     that.setData({//设置占位图片
       beforeImage: beforeImages,
@@ -73,19 +39,7 @@ Page({
   },
 
 
-  pickerBindchange: function (e) {
-    console.log(e);
-    var that = this;
-    var index = 0;
-    var value = e.detail.value;
-    if (value){
-      index = parseInt(e.detail.value);
-      that.setData({
-        workersIndex: index
-      })
-    }
-    
-  },
+  
 
   beforeImageTaped: function (e) {
     console.log(e);
@@ -99,27 +53,15 @@ Page({
 
 
   afterImageTaped: function (e) {
-    var that = this;
-    if (that.data.type === 'done') {
-      console.log(e);
-      var that = this;
-      var index = parseInt(e.target.id);
-      console.log(that.data.afterImage[index]);
-      if (!that.data.afterImage[index]) { return; }
-      util.previewImage(that.data.afterImage[index]);
-    }
-    else {
-      var index = parseInt(e.target.id);
-      selectAndUploadImage(that, index);
-    }
-  },
-
-  afterImageLongTaped: function (e) {
-    console.log(e);
+    onsole.log(e);
     var that = this;
     var index = parseInt(e.target.id);
+    console.log("afterImage");
+    console.log(that.data.afterImage[index]);
+    if (!that.data.afterImage[index]) { return; }
     util.previewImage(that.data.afterImage[index]);
   },
+
 
 
 
@@ -141,7 +83,7 @@ Page({
   datepickerBindchange: function (e) {
     var that = this;
     console.log(e);
-    var date =e.detail.value;
+    var date = e.detail.value;
     var time = that.data.time;
     that.setData({
       date: date,
@@ -229,11 +171,11 @@ function selectAndUploadImage(that, id) {
       // return;
       // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
       var tempFilePath = res.tempFilePaths[0];
-        var afterImage = that.data.afterImage;
-        afterImage[id] = tempFilePath;
-        that.setData({
-          afterImage: afterImage
-        })
+      var afterImage = that.data.afterImage;
+      afterImage[id] = tempFilePath;
+      that.setData({
+        afterImage: afterImage
+      })
       var formData = { index: id + 1, id: that.data.repairOrder.id };
       util.uploadImage(config.urls.setRepairImageUrl, tempFilePath, formData);
     }

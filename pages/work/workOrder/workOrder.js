@@ -101,9 +101,10 @@ Page({
 function getRepairList(that) {
   // var ztInfo = wx.getStorageSync("currentZT") || {};
   var workOrderInfo = wx.getStorageSync("workOrderInfo");
+  var userInfo = wx.getStorageSync("userInfo");
   var data = {
-    userId: workOrderInfo.userId,
-    structureId: workOrderInfo.structureId,
+    userId: userInfo.userId,
+    structureId: userInfo.structureId,
     roleId: workOrderInfo.roleId,
   }
   util.getRequest(config.urls.getWorkOrderUrl, data, function (data,errCode) {

@@ -272,7 +272,7 @@ function downloadAndLookFiles(fileUrl, doSuccess = null, doFail = null, doComple
 
 function uploadImage(url, filePath, formData) {
   var userInfo = wx.getStorageSync("userInfo");
-  var imageName = "" + userInfo.Id + getTimeStamp() + "." + getImageType(filePath);
+  var imageName = getTimeStamp() + "." + getImageType(filePath);
   wx.showLoading({
     title: '正在上传...',
   })
@@ -301,8 +301,15 @@ function uploadImage(url, filePath, formData) {
  * 预览照片
  */
 function previewImage(imageUrl) {
+  console.log(imageUrl);
   wx.previewImage({
     urls: [imageUrl],
+    success: res => {
+      console.log(res);
+    },
+    fail: res => {
+      console.log(res);
+    }
   })
 }
 

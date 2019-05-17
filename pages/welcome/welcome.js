@@ -8,20 +8,26 @@ Page({
     coverViewShow: true,
     password: "",
     icons: [
-    {
-      imgSrc: "../../images/gongdan.png",
-      bindtap: "imageTouched",
-      showValue: "任务单处理"
-    },
-    {
-      imgSrc: "../../images/xunjian.png",
-      bindtap: "imageTouched",
-      showValue: "巡更管理"
-    },
+      {
+        imgSrc: "../../images/gongdan.png",
+        bindtap: "imageTouched",
+        showValue: "任务单处理"
+      },
+      {
+        imgSrc: "../../images/xunjian.png",
+        bindtap: "imageTouched",
+        showValue: "巡更管理"
+      },
+      {
+        imgSrc: "../../images/xunchang.png",
+        bindtap: "imageTouched",
+        showValue: "报事管理"
+      },
     ],
     navPages: [
       "../work/workOrder/workOrder",
       "../patrol/frequency/frequency",
+      "../report/report/report",
     ],
     userInfo: {},
     currentZT: {
@@ -35,123 +41,23 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    // wx.checkSession({
-    //   success: res => {
-    //     console.log(res);
-    //     var sessionId = wx.getStorageSync("sessionId");
-    //     if (sessionId) {
-    //       getUserInfo(that);
-    //     } else {
-    //       login(that);
-    //     }
-    //   },
-    //   fail: res => {
-    //     console.log(res);
-    //     login(that);
-    //   }
-    // })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  },
-
-  input: function (e) {
-    console.log(e);
-    var that = this;
-    that.setData({
-      password: e.detail.value
+    wx.checkSession({
+      success: res => {
+        console.log(res);
+        var sessionId = wx.getStorageSync("sessionId");
+        if (sessionId) {
+          getUserInfo(that);
+        } else {
+          login(that);
+        }
+      },
+      fail: res => {
+        console.log(res);
+        login(that);
+      }
     })
   },
 
-  // checkPassword: function (e) {
-  //   var that = this;
-  //   var userInfo = wx.getStorageSync("userInfo");
-  //   var userId = userInfo.Id;
-  //   var password = that.data.password;
-  //   wx.request({
-  //     url: config.urls.checkPasswordUrl,
-  //     method: "POST",
-  //     header: { 'content-type': 'application/x-www-form-urlencoded;charset=uft-8' },
-  //     data: {
-  //       userId: '' + userId,
-  //       password: password
-  //     },
-  //     success: function (res) {
-  //       console.log(res);
-  //       if (res.data.result == "匹配") {
-  //         that.setData({
-  //           coverViewShow: false
-  //         })
-  //       } else {
-  //         if (res.data.result == "不匹配") {
-  //           wx.showModal({
-  //             title: '提示',
-  //             content: '您输入的密码有误，请重新输入',
-  //             showCancel: false,
-  //           })
-  //           return;
-  //         } else {
-  //           wx.showModal({
-  //             title: '提示',
-  //             content: '您提交的信息不完整，请重试',
-  //             showCancel: false,
-  //             success: res => {
-  //               wx.checkSession({
-  //                 success: res => {
-  //                   console.log(res);
-  //                   var sessionId = wx.getStorageSync("sessionId");
-  //                   if (sessionId) {
-  //                     getUserInfo(that);
-  //                   } else {
-  //                     login(that);
-  //                   }
-  //                 },
-  //                 fail: res => {
-  //                   console.log(res);
-  //                   login(that);
-  //                 }
-  //               })
-  //             }
-  //           })
-  //           return;
-  //         }
-  //       }
-  //     },
-  //     fail: function (res) {
-  //       wx.showModal({
-  //         title: '提示',
-  //         content: '网络错误，请稍后重试',
-  //         showCancel: false,
-  //       })
-  //       return;
-  //     }
-  //   })
-  // },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  // onShow: function () {
-  //   var that = this;
-  //   var zt = wx.getStorageSync("currentZT");
-  //   if (zt) {
-  //     that.setData({
-  //       currentZT: zt
-  //     })
-  //   }
-
-  // },
-  /**
-   * 点击界面上方燕侨图标，修改当前帐套
-   */
-  // changeManagement: function (e) {
-  //   wx.navigateTo({
-  //     url: '../changeManagement/changeManagement',
-  //   })
-  // },
 
   /**
    * 点击界面中间图标，进入相应功能界面
@@ -160,30 +66,23 @@ Page({
     var that = this;
     console.log(e);
     var func = e.currentTarget.dataset.func;
-    if (func === "任务单处理"){
-      wx.checkSession({
-        success: res => {
-          console.log(res);
-          var sessionId = wx.getStorageSync("sessionId");
-          if (sessionId) {
-            getUserInfo(that);
-          } else {
-            login(that);
-          }
-        },
-        fail: res => {
-          console.log(res);
-          login(that);
+    if (func === "任务单处理") {
+      var userInfo = wx.getStorageSync("userInfo");
+      for (var i = 0; i < userInfo.roles.length; i++) {
+        if (userInfo.roles[i].roleId == 24 || userInfo.roles[i].roleId == 25) {
+          that.setData({
+            workOrderInfo: userInfo.roles[i]
+          })
+          wx.setStorageSync('workOrderInfo', userInfo.roles[i]);
+          break;
         }
-      })
-      return;
+      }
     }
-    
-      wx.navigateTo({
-        url: that.data.navPages[e.currentTarget.id - 1],
-      })
-      return;
-      // }
+    wx.navigateTo({
+      url: that.data.navPages[e.currentTarget.id - 1],
+    })
+    return;
+    // }
     // }
     wx.showModal({
       title: '提示',
@@ -200,7 +99,7 @@ Page({
 function toLogin() {
   wx.showModal({
     title: '提示',
-    content: '您尚未绑定物业通账号，立即绑定？',
+    content: '您尚未绑定F2系统账号，如仅需要使用“巡更管理”功能，可点击取消，立即绑定？',
     confirmText: '是',
     cancelText: '否',
     success: res => {
@@ -289,18 +188,18 @@ function checkAndSaveUser(that, data) {
     userInfo: userInfo
   })
   wx.setStorageSync("userInfo", userInfo);
-  for (var i = 0; i < userInfo.length; i++) {
-    if (userInfo[i].roleId == 24 || userInfo[i].roleId == 25 ) {
-      that.setData({
-        workOrderInfo: userInfo[i]
-      })
-      wx.setStorageSync('workOrderInfo', userInfo[i]);
-      break;
-    }
-  }
-  wx.navigateTo({
-    url: that.data.navPages[0],
-  })
+  // for (var i = 0; i < userInfo.roles.length; i++) {
+  //   if (userInfo.roles[i].roleId == 24 || userInfo.roles[i].roleId == 25 ) {
+  //     that.setData({
+  //       workOrderInfo: userInfo.roles[i]
+  //     })
+  //     wx.setStorageSync('workOrderInfo', userInfo.roles[i]);
+  //     break;
+  //   }
+  // }
+  // wx.navigateTo({
+  //   url: that.data.navPages[0],
+  // })
   that.setData({
     pageHidden: false
   })

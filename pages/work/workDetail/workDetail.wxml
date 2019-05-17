@@ -1,5 +1,11 @@
 <!--pages/login/login.wxml-->
+
+
+
+<!-- 待处理任务单显示界面 -->
 <block wx:if="{{type == 'undone'}}">
+
+  <!-- 接单人看到的界面 -->
   <block wx:if="{{roleId == 24}}">
     <view class="main-view">
       <view class="func-block">
@@ -72,6 +78,18 @@
             </picker>
           </view>
         </view>
+        <view class="func-block">
+          <view class="block-header">
+            <view class="tip-view">
+              处理前照片
+            </view>
+          </view>
+          <view class="images-view">
+            <block wx:for="{{beforeImage}}">
+              <image class='sd-image' id='{{index}}' src='{{item}}' bindtap='beforeImageTaped' />
+            </block>
+          </view>
+        </view>
         <button id="submit" formType="submit" type='primary'>提交</button>
       </form>
     </view>
@@ -80,7 +98,7 @@
 
 
 
-
+  <!-- 实施人看到的界面 -->
   <block wx:if="{{roleId == 25}}">
     <view class="main-view">
       <view class="func-block">
@@ -160,7 +178,30 @@
               <image class='cd-next-image' src='../../../images/time.png' />
             </picker>
           </view>
-
+        </view>
+        <view class="func-block">
+          <view class="block-header">
+            <view class="tip-view">
+              处理前照片
+            </view>
+          </view>
+          <view class="images-view">
+            <block wx:for="{{beforeImage}}">
+              <image class='sd-image' id='{{index}}' src='{{item}}' bindtap='beforeImageTaped' />
+            </block>
+          </view>
+        </view>
+        <view class="func-block">
+          <view class="block-header">
+            <view class="tip-view">
+              处理后照片(点击添加，长按预览）
+            </view>
+          </view>
+          <view class="images-view">
+            <block wx:for="{{afterImage}}">
+              <image id='{{index}}' class='sd-image' src='{{item}}' bindtap='afterImageTaped' bindlongtap='afterImageTapedLongTaped' />
+            </block>
+          </view>
         </view>
         <button id="submit" formType="submit" type='primary'>提交</button>
       </form>
@@ -171,100 +212,127 @@
 
 
 
-
+<!-- 已处理任务单显示界面 -->
 <block wx:if="{{type == 'done'}}">
   <view class="main-view">
-      <view class="func-block">
-        <view class="block-header">
-          <view class="tip-view">
-            基本情况
-          </view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>编号：</view>
-          <view class='sd-content'>{{repairOrder.number}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>状态：</view>
-          <view class='sd-content'>{{repairOrder.status}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>管理处：</view>
-          <view class='sd-content'>{{repairOrder.project}}</view>
+    <view class="func-block">
+      <view class="block-header">
+        <view class="tip-view">
+          基本情况
         </view>
       </view>
-      <view class="func-block">
-        <view class="block-header">
-          <view class="tip-view">
-            客服填报
-          </view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>客服填报人：</view>
-          <view class='sd-content'>{{repairOrder.server}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>客服填报日期：</view>
-          <view class='sd-content'>{{repairOrder.reportDate}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>接单人：</view>
-          <view class='sd-content'>{{repairOrder.receiver}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>接单人手机：</view>
-          <view class='sd-content'>{{repairOrder.receiverPhone}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>工作地址：</view>
-          <view class='sd-content'>{{repairOrder.workAddress}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>工作内容：</view>
-          <view class='sd-content'>{{repairOrder.workContent}}</view>
-        </view>
+      <view class="sd-item">
+        <view class='sd-title'>编号：</view>
+        <view class='sd-content'>{{repairOrder.number}}</view>
       </view>
-      <view class="func-block">
-        <view class="block-header">
-          <view class="tip-view">
-            派工与实施
-          </view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>实施人：</view>
-          <view class='sd-content'>{{repairOrder.worker}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>实施人手机：</view>
-          <view class='sd-content'>{{repairOrder.workerPhone}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>配合人员数量：</view>
-          <view class='sd-content'>{{repairOrder.workNumber}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>预计完成时间：</view>
-          <view class='sd-content'>{{repairOrder.predictFinishTime}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>工作情况：</view>
-          <view class='sd-content'>{{repairOrder.workSituation}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>需要材料：</view>
-          <view class='sd-content'>{{repairOrder.materials}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>实际完成时间：</view>
-          <view class='sd-content'>{{repairOrder.actualFinishTime}}</view>
-        </view>
-        <view class="sd-item">
-          <view class='sd-title'>工作人员：</view>
-          <view class='sd-content'>{{repairOrder.workers}}</view>
-        </view>
+      <view class="sd-item">
+        <view class='sd-title'>状态：</view>
+        <view class='sd-content'>{{repairOrder.status}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>管理处：</view>
+        <view class='sd-content'>{{repairOrder.project}}</view>
       </view>
     </view>
-    <view class="page-footer"></view>
+    <view class="func-block">
+      <view class="block-header">
+        <view class="tip-view">
+          客服填报
+        </view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>客服填报人：</view>
+        <view class='sd-content'>{{repairOrder.server}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>客服填报日期：</view>
+        <view class='sd-content'>{{repairOrder.reportDate}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>接单人：</view>
+        <view class='sd-content'>{{repairOrder.receiver}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>接单人手机：</view>
+        <view class='sd-content'>{{repairOrder.receiverPhone}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>工作地址：</view>
+        <view class='sd-content'>{{repairOrder.workAddress}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>工作内容：</view>
+        <view class='sd-content'>{{repairOrder.workContent}}</view>
+      </view>
+    </view>
+    <view class="func-block">
+      <view class="block-header">
+        <view class="tip-view">
+          派工与实施
+        </view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>实施人：</view>
+        <view class='sd-content'>{{repairOrder.worker}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>实施人手机：</view>
+        <view class='sd-content'>{{repairOrder.workerPhone}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>配合人员数量：</view>
+        <view class='sd-content'>{{repairOrder.workNumber}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>预计完成时间：</view>
+        <view class='sd-content'>{{repairOrder.predictFinishTime}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>工作情况：</view>
+        <view class='sd-content'>{{repairOrder.workSituation}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>需要材料：</view>
+        <view class='sd-content'>{{repairOrder.materials}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>实际完成时间：</view>
+        <view class='sd-content'>{{repairOrder.actualFinishTime}}</view>
+      </view>
+      <view class="sd-item">
+        <view class='sd-title'>工作人员：</view>
+        <view class='sd-content'>{{repairOrder.workers}}</view>
+      </view>
+    </view>
+    <!-- 如果为任务单来源为现场报事，显示该部分内容。 -->
+    <!-- <block wx:if="{{repairOrder.reporter}}"> -->
+    <view class="func-block">
+      <view class="block-header">
+        <view class="tip-view">
+          处理前照片
+        </view>
+      </view>
+      <view class="images-view">
+        <block wx:for="{{beforeImage}}">
+          <image class='sd-image' id='{{index}}' src='{{item}}' bindtap='beforeImageTaped' />
+        </block>
+      </view>
+    </view>
+    <!-- </block> -->
+    <view class="func-block">
+      <view class="block-header">
+        <view class="tip-view">
+          处理后照片
+        </view>
+      </view>
+      <view class="images-view">
+        <block wx:for="{{afterImage}}">
+          <image class='sd-image' id='{{index}}' src='{{item}}' bindtap='afterImageTaped' />
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="page-footer"></view>
 
 
 

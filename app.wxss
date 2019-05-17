@@ -121,7 +121,7 @@ button {
   background-color: white;
   margin-left: 10rpx;
   color: #606060;
-  width: 480rpx;
+  width: 380rpx;
 }
 
 .cd-radio {
