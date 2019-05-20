@@ -1,0 +1,28 @@
+
+<view class="main-view">
+<view class="header-view">
+<view class="tip-view">
+  请您在此页面输入客户房号、姓名或车牌号，小程序会根据您输入的内容查询对应的客户信息。
+</view>
+</view>
+<form bindsubmit="submit">
+  <view class="form-view">
+  <view class="item-view">
+    <label>房号</label>
+    <input id="1" name="homeNumber" placeholder="请输入客户房号" placeholder-class="placeholder-text" />
+  </view>
+  <view class="item-view">
+    <label>姓名</label>
+    <input id="2" name="name" placeholder="请输入客户姓名" placeholder-class="placeholder-text" />
+  </view>
+   <view class="item-view">
+    <label>车牌号</label>
+    <input id="3" name="licensePlateNumber" placeholder="请输入客户车牌号" placeholder-class="placeholder-text" />
+  </view> 
+  </view>
+  <button id="submit" formType="submit" type='primary'>查询</button>
+  </form>
+</view>
+
+
+

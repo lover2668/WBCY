@@ -1,8 +1,8 @@
 
 
-// const baseUrl = "http://localhost:11780";//云服务器Url
+const baseUrl = "http://localhost:11780";//云服务器Url
 // const baseUrl = "http://k17154485y.imwork.net:23530/WanBoServer";
-const baseUrl = "https://itidcy.cn/WanBoServer";
+// const baseUrl = "https://itidcy.cn/WanBoServer";
 // const baseUrl = "https://itidcy.cn/WanBoServerTest";
 
 const workOrderUrl = baseUrl + "/WorkOrder";//工单相关功能Url

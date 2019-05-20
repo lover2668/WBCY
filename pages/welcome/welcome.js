@@ -23,11 +23,39 @@ Page({
         bindtap: "imageTouched",
         showValue: "报事管理"
       },
+      {
+        imgSrc: "../../images/weixiu.png",
+        bindtap: "imageTouched",
+        showValue: "有偿维修管理"
+      },
+      {
+        imgSrc: "../../images/tousu.png",
+        bindtap: "imageTouched",
+        showValue: "投诉表扬建议管理"
+      },
+      {
+        imgSrc: "../../images/shoufei.png",
+        bindtap: "imageTouched",
+        showValue: "客户信息查询"
+      },
+      // {
+      //   imgSrc: "../../images/jiaofei.png",
+      //   bindtap: "imageTouched",
+      //   showValue: "客户信息查询"
+      // },
+      // {
+      //   imgSrc: "../../images/xunchang.png",
+      //   bindtap: "imageTouched",
+      //   showValue: "有偿维修管理"
+      // },
     ],
     navPages: [
       "../work/workOrder/workOrder",
       "../patrol/frequency/frequency",
       "../report/report/report",
+      "../repair/repairOrder/repairOrder",
+      "../complain/complainOrder/complainOrder",
+      "../appropriator/search/search"
     ],
     userInfo: {},
     currentZT: {
